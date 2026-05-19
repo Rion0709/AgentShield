@@ -21,7 +21,7 @@ class CustomInstallCommand(install):
             print(f"Warning: Failed to automatically register AgentShield auto-protection: {e}")
 
 setup(
-    name="agentshield",
+    name="agentshield-firewall",
     version="1.0.0",
     description="AgentShield Enterprise AI Agent Security Firewall",
     author="Antigravity",
