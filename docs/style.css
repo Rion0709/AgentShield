@@ -197,7 +197,7 @@ header {
     z-index: 10;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .dashboard-three-columns {
         grid-template-columns: 1fr;
     }
