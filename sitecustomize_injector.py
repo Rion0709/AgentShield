@@ -3,6 +3,18 @@ import sys
 import os
 import site
 
+def safe_print(msg: str):
+    """Prints a message, falling back to ASCII equivalents if Unicode is unsupported by stdout."""
+    try:
+        print(msg)
+    except UnicodeEncodeError:
+        safe_msg = msg.replace("❌", "[Error]").replace("ℹ️", "[Info]").replace("✅", "[Success]")
+        encoding = sys.stdout.encoding or "ascii"
+        try:
+            print(safe_msg.encode(encoding, errors="replace").decode(encoding))
+        except Exception:
+            print(safe_msg.encode("ascii", errors="replace").decode("ascii"))
+
 def get_sitecustomize_path():
     """Locates the system or user site-packages directory to find sitecustomize.py."""
     # Try system site packages first
@@ -28,7 +40,7 @@ def inject() -> bool:
     """Appends AgentShield auto-protection imports to the target sitecustomize.py."""
     path = get_sitecustomize_path()
     if not path:
-        print("❌ Error: Could not locate a writable site-packages directory to configure auto-protect.")
+        safe_print("❌ Error: Could not locate a writable site-packages directory to configure auto-protect.")
         return False
         
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -45,20 +57,20 @@ def inject() -> bool:
         with open(path, "r", encoding="utf-8") as f:
             content = f.read()
         if "agentshield.init()" in content:
-            print(f"ℹ️  AgentShield auto-protection is already registered in: {path}")
+            safe_print(f"ℹ️  AgentShield auto-protection is already registered in: {path}")
             return True
             
     with open(path, "a", encoding="utf-8") as f:
         f.write(injection_block)
         
-    print(f"✅ Success: Registered AgentShield auto-protection in: {path}")
+    safe_print(f"✅ Success: Registered AgentShield auto-protection in: {path}")
     return True
 
 def remove() -> bool:
     """Removes all AgentShield registration hooks from sitecustomize.py."""
     path = get_sitecustomize_path()
     if not path or not os.path.exists(path):
-        print("ℹ️  No custom configurations found. Nothing to remove.")
+        safe_print("ℹ️  No custom configurations found. Nothing to remove.")
         return True
         
     with open(path, "r", encoding="utf-8") as f:
@@ -84,7 +96,7 @@ def remove() -> bool:
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(cleaned_content) + "\n")
         
-    print(f"✅ Success: Removed AgentShield auto-protection configurations from: {path}")
+    safe_print(f"✅ Success: Removed AgentShield auto-protection configurations from: {path}")
     return True
 
 if __name__ == "__main__":
