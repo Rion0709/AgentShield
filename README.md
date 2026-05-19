@@ -63,7 +63,7 @@ AgentShield includes a cyber-security dashboard to test different LLM security e
 
 1. Start the local server:
    ```bash
-   python -m http.server 8000 --directory dashboard
+   python -m http.server 8000 --directory docs
    ```
 2. Open [http://localhost:8000](http://localhost:8000) in your web browser.
 3. Select attack presets like **Homoglyph Evasion** or **JSON Injection** and observe AgentShield block them in real-time.
