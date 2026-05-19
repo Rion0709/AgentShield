@@ -2,6 +2,10 @@
 
 AgentShield is a robust, enterprise-grade AI Agent Security Firewall designed to intercept, analyze, and neutralize security vulnerabilities, jailbreak attempts, and prompt injection attacks in real-time. By leveraging a multi-layered security architecture, AgentShield protects your AI systems without altering existing business logic.
 
+<p align="center">
+  <img src="assets/demo.webp" alt="AgentShield Interactive Dashboard Demo" width="900" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+</p>
+
 ---
 
 ## ✨ Features
@@ -50,6 +54,19 @@ def run_my_agent(user_prompt: str) -> str:
     # Your LLM logic here
     return response
 ```
+
+---
+
+## 🎨 Interactive Playground & Dashboard
+
+AgentShield includes a cyber-security dashboard to test different LLM security evasion vectors:
+
+1. Start the local server:
+   ```bash
+   python -m http.server 8000 --directory dashboard
+   ```
+2. Open [http://localhost:8000](http://localhost:8000) in your web browser.
+3. Select attack presets like **Homoglyph Evasion** or **JSON Injection** and observe AgentShield block them in real-time.
 
 ---
 
