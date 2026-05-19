@@ -25,7 +25,11 @@ AgentShield is a robust, enterprise-grade AI Agent Security Firewall designed to
 ## 🚀 Quick Start
 
 ### 1. Installation
-Install AgentShield locally:
+Install AgentShield directly from PyPI:
+```bash
+pip install agentshield-firewall
+```
+Or install it locally:
 ```bash
 pip install .
 ```
