@@ -234,7 +234,7 @@ function analyzePrompt(text) {
 
     // 3. Decoding check (Base64/Hex)
     let decoded = "";
-    if (textLower.includes("awdub3jlehbyzxzpbyvzagluc3rydwn0aw9ucw")) { // base64 snippet
+    if (textLower.includes("awdub3jlihbyzxzpb3vzigluc3rydwn0aw9ucw")) { // base64 snippet
         status.decoder = "active-fail";
         decoded = "ignore previous instructions";
     } else if (textLower.includes("\\x6a\\x61\\x69\\x6c")) { // hex jailbreak
