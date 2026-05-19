@@ -112,10 +112,12 @@ function addRandomLog(container) {
     const threat = THREAT_LOGS[Math.floor(Math.random() * THREAT_LOGS.length)];
     
     const timeStr = new Date().toLocaleTimeString();
+    const bulletType = threat.type === "critical" ? "bullet-critical" : "bullet-warning";
     
     const logEntry = document.createElement("div");
     logEntry.className = `log-entry ${threat.type === "critical" ? "log-critical" : "log-warning"}`;
     logEntry.innerHTML = `
+        <span class="log-bullet ${bulletType}"></span>
         <span class="log-time">[${timeStr}]</span>
         <span class="log-msg"><strong>[${agent} @ ${ip}]</strong> ${threat.msg}</span>
     `;
@@ -133,6 +135,10 @@ function performScan() {
     const input = document.getElementById("prompt-input").value.trim();
     if (!input) return;
 
+    // Reset central shield state to scanning (pulsating blue)
+    const shield = document.getElementById("central-shield-status");
+    shield.className = "shield-wrapper scanning-state";
+
     // Trigger visual scan effect
     const scanBtn = document.getElementById("scan-btn");
     scanBtn.classList.add("scanning-pulse");
@@ -148,6 +154,9 @@ function performScan() {
         // Run simulated detection rules
         const result = analyzePrompt(input);
 
+        // Update central shield state based on scan verdict
+        shield.className = `shield-wrapper ${result.safe ? 'safe-state' : 'unsafe-state'}`;
+
         // Update stats
         totalScans += 1;
         if (!result.safe) {
@@ -158,8 +167,22 @@ function performScan() {
             const logEntry = document.createElement("div");
             logEntry.className = "log-entry log-critical";
             logEntry.innerHTML = `
+                <span class="log-bullet bullet-critical"></span>
                 <span class="log-time">[${timeStr}]</span>
                 <span class="log-msg"><strong>[Playground-Simulator]</strong> ${result.reason}</span>
+            `;
+            logContainer.insertBefore(logEntry, logContainer.firstChild);
+        } else {
+            // Add custom safe passed query to log list
+            const logContainer = document.getElementById("log-monitor");
+            const timeStr = new Date().toLocaleTimeString();
+            const logEntry = document.createElement("div");
+            logEntry.className = "log-entry";
+            logEntry.style.borderColor = "var(--safe)";
+            logEntry.innerHTML = `
+                <span class="log-bullet bullet-safe"></span>
+                <span class="log-time">[${timeStr}]</span>
+                <span class="log-msg"><strong>[Playground-Simulator]</strong> Prompt verified successfully and passed security checks.</span>
             `;
             logContainer.insertBefore(logEntry, logContainer.firstChild);
         }

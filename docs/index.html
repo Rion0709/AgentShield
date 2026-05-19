@@ -6,15 +6,15 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>AgentShield - AI Agent Security Firewall & Playground</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <title>AgentShield - AI Agent Security Firewall</title>
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
     <!-- Header Navigation -->
     <header>
         <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
             AgentShield
@@ -32,61 +32,150 @@
         </a>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Shielding AI Agents Against Injection & Leakage</h1>
-            <p>An enterprise-grade, lightweight security firewall. Defends LLMs against homoglyph evasions, context poisoning, split tokens, rate anomalies, and exfiltration vectors.</p>
-        </section>
+    <!-- Top Title Banner -->
+    <div class="main-title-section">
+        <h1 class="glow-title">AGENTSHIELD</h1>
+        <p class="glow-subtitle">AI SECURITY FIREWALL</p>
+    </div>
 
-        <!-- Stats Counters -->
-        <section class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-header">
-                    TOTAL SCANS RUN
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                </div>
-                <div class="stat-val" id="total-scans-val">0</div>
-                <div class="stat-desc">
-                    <span class="trend-up">▲ 14.8%</span> since last hour
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header">
-                    THREATS BLOCKED
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                </div>
-                <div class="stat-val" id="blocked-threats-val">0</div>
-                <div class="stat-desc">
-                    <span class="trend-up">▲ 8.2%</span> attack detection rate
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header">
-                    THREAT RATE RATIO
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                </div>
-                <div class="stat-val" id="threat-rate-val">0%</div>
-                <div class="stat-desc">
-                    Average threat density
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header">
-                    ML CLASSIFIER CORE
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                </div>
-                <div class="stat-val" style="color: var(--safe); font-size: 1.8rem; padding-top: 0.35rem;">ACTIVE</div>
-                <div class="stat-desc">
-                    scikit-learn & TF-IDF model active
-                </div>
-            </div>
-        </section>
-
-        <!-- Dashboard Columns -->
-        <section class="dashboard-grid">
+    <main class="dashboard-three-columns">
+        
+        <!-- ================= LEFT COLUMN ================= -->
+        <aside class="side-column">
             
-            <!-- Left: Playground Panel -->
+            <!-- Widget 1: AI Agent Status -->
+            <div class="panel widget-card" id="agent-status-panel">
+                <div class="panel-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    </svg>
+                    AI AGENT STATUS
+                </div>
+                <div class="widget-meta">
+                    STATUS: <span class="status-active">ACTIVE</span> | THREAT LEVEL: <span class="threat-low">LOW</span>
+                </div>
+                <div class="widget-metric-row">
+                    <div class="widget-metric-val">9</div>
+                    <div class="widget-metric-label">AI Agents<br>Monitoring</div>
+                    <span class="badge-realtime">Real-Time</span>
+                </div>
+                <!-- Mini Bar Chart -->
+                <div class="chart-container">
+                    <svg class="bar-chart" viewBox="0 0 300 80">
+                        <rect x="10" y="40" width="8" height="40" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="25" y="30" width="8" height="50" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="40" y="50" width="8" height="30" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="55" y="20" width="8" height="60" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="70" y="35" width="8" height="45" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="85" y="15" width="8" height="65" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="100" y="45" width="8" height="35" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="115" y="25" width="8" height="55" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="130" y="35" width="8" height="45" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="145" y="10" width="8" height="70" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="160" y="30" width="8" height="50" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="175" y="40" width="8" height="40" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="190" y="20" width="8" height="60" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="205" y="35" width="8" height="45" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="220" y="15" width="8" height="65" fill="url(#cyan-grad)" rx="2"/>
+                        <rect x="235" y="5" width="8" height="75" fill="url(#purple-grad)" rx="2"/>
+                        <rect x="250" y="25" width="8" height="55" fill="url(#purple-grad)" rx="2"/>
+                        <rect x="265" y="40" width="8" height="40" fill="url(#purple-grad)" rx="2"/>
+                        <rect x="280" y="30" width="8" height="50" fill="url(#purple-grad)" rx="2"/>
+                        
+                        <defs>
+                            <linearGradient id="cyan-grad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#00f0ff"/>
+                                <stop offset="100%" stop-color="rgba(0, 240, 255, 0.2)"/>
+                            </linearGradient>
+                            <linearGradient id="purple-grad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#bd00ff"/>
+                                <stop offset="100%" stop-color="rgba(189, 0, 255, 0.2)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Widget 2: Traffic Analytics -->
+            <div class="panel widget-card" id="traffic-panel">
+                <div class="panel-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                    TRAFFIC ANALYTICS
+                </div>
+                <div class="traffic-stats-row">
+                    <div>
+                        <div class="traffic-label">Total Requests</div>
+                        <div class="traffic-val" id="total-scans-val">1.45M</div>
+                    </div>
+                    <div>
+                        <div class="traffic-label label-unsafe">Blocked Threats</div>
+                        <div class="traffic-val val-unsafe" id="blocked-threats-val">23,891</div>
+                    </div>
+                </div>
+                <!-- Dual Gradient Bar -->
+                <div class="dual-progress-bar">
+                    <div class="progress-safe" id="progress-safe-bar" style="width: 85%;"></div>
+                    <div class="progress-unsafe" id="progress-unsafe-bar" style="width: 15%;"></div>
+                </div>
+                <div class="progress-labels">
+                    <span class="safe-ratio">Safe: 98.4%</span>
+                    <span class="unsafe-ratio">Threat Rate: <span id="threat-rate-val">1.6%</span></span>
+                </div>
+                <!-- Neon Wave Line Chart -->
+                <div class="chart-container" style="margin-top: 1rem;">
+                    <svg class="line-chart" viewBox="0 0 300 80">
+                        <path d="M 0 60 Q 30 20 60 50 T 120 40 T 180 65 T 240 30 T 300 45" fill="none" stroke="url(#line-glow)" stroke-width="3"/>
+                        <path d="M 0 60 Q 30 20 60 50 T 120 40 T 180 65 T 240 30 T 300 45 L 300 80 L 0 80 Z" fill="url(#line-fill-grad)" opacity="0.15"/>
+                        
+                        <defs>
+                            <linearGradient id="line-glow" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#00f0ff"/>
+                                <stop offset="50%" stop-color="#bd00ff"/>
+                                <stop offset="100%" stop-color="#ff0055"/>
+                            </linearGradient>
+                            <linearGradient id="line-fill-grad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#bd00ff"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ================= CENTER COLUMN (MAIN PLAYGROUND) ================= -->
+        <section class="center-column">
+            
+            <!-- Central Futuristic Shield Visualizer -->
+            <div class="shield-visualizer-container">
+                <div class="shield-outer-ring"></div>
+                <div class="shield-middle-ring"></div>
+                <div class="shield-inner-ring"></div>
+                
+                <div class="shield-wrapper" id="central-shield-status">
+                    <!-- Central metallic shield SVG -->
+                    <svg class="shield-graphic" viewBox="0 0 100 100">
+                        <!-- Futuristic glowing shield path -->
+                        <path class="shield-border" d="M 50 10 C 75 10, 85 20, 85 45 C 85 70, 50 90, 50 90 C 50 90, 15 70, 15 45 C 15 20, 25 10, 50 10 Z" fill="rgba(8, 10, 24, 0.75)" stroke="url(#shield-border-grad)" stroke-width="4"/>
+                        <!-- Inner detail line -->
+                        <path class="shield-detail" d="M 50 16 C 70 16, 78 24, 78 45 C 78 65, 50 82, 50 82 C 50 82, 22 65, 22 45 C 22 24, 30 16, 50 16 Z" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.3" stroke-dasharray="2, 2"/>
+                        <!-- Glowing lettermark 'AS' inside shield -->
+                        <text x="50" y="60" class="shield-logo-text" text-anchor="middle">AS</text>
+                        
+                        <defs>
+                            <linearGradient id="shield-border-grad" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#00f0ff"/>
+                                <stop offset="50%" stop-color="#7000ff"/>
+                                <stop offset="100%" stop-color="#bd00ff"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Playground Control Console -->
             <div class="panel" id="playground">
                 <div class="panel-title">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -95,7 +184,7 @@
                     Interactive Security Playground
                 </div>
                 
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600;">EVASION PRESET ATTACKS</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 700; letter-spacing: 0.5px;">EVASION PRESET ATTACKS</div>
                 <div class="presets-container">
                     <button class="preset-btn" data-type="safe">🟢 Safe Query</button>
                     <button class="preset-btn" data-type="direct">🔴 Direct Override</button>
@@ -113,7 +202,7 @@
                 </div>
 
                 <div class="scan-action">
-                    <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">
                         All rules running locally in real-time.
                     </span>
                     <button class="scan-btn" id="scan-btn">
@@ -126,34 +215,89 @@
 
                 <!-- Simulation Result Overlay -->
                 <div class="result-box" id="result-box">
-                    <div style="text-align: center; color: var(--text-muted); padding: 1.5rem 0; font-size: 0.9rem;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 0.5rem; opacity: 0.5;">
+                    <div style="text-align: center; color: var(--text-muted); padding: 1.5rem 0; font-size: 0.95rem;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 0.5rem; opacity: 0.4;">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                         </svg>
                         <p>Enter a query in the playground and scan it to inspect AgentShield's detection pipeline.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Right: Honey-pot Logs Terminal -->
-            <div class="panel" id="honey-pot">
+        <!-- ================= RIGHT COLUMN ================= -->
+        <aside class="side-column">
+            
+            <!-- Widget 3: Live Security Logs -->
+            <div class="panel widget-card" id="honey-pot">
                 <div class="panel-title">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
                         <line x1="7" y1="2" x2="7" y2="22"></line>
                         <line x1="17" y1="2" x2="17" y2="22"></line>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
                     </svg>
-                    Live Agent Threat Monitor (SaaS Demo)
+                    LIVE SECURITY LOGS
                 </div>
                 <div class="monitor-logs" id="log-monitor">
                     <!-- Logs dynamically populated -->
                 </div>
             </div>
 
-        </section>
+            <!-- Widget 4: Threat Types Distribution -->
+            <div class="panel widget-card" id="threat-types-panel">
+                <div class="panel-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    THREAT TYPES
+                </div>
+                <div class="donut-chart-section">
+                    <!-- SVG Circular Donut Chart matching visual -->
+                    <div class="donut-wrapper">
+                        <svg class="donut-chart" viewBox="0 0 36 36">
+                            <path class="donut-ring" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="3"/>
+                            
+                            <!-- SQLi segment (25%) -->
+                            <path class="donut-segment segment-sqli" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#00f0ff" stroke-width="3.5" stroke-dasharray="25 100" stroke-dashoffset="0"/>
+                            <!-- DDoS segment (15%) -->
+                            <path class="donut-segment segment-ddos" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#bd00ff" stroke-width="3.5" stroke-dasharray="15 100" stroke-dashoffset="-25"/>
+                            <!-- Malware segment (20%) -->
+                            <path class="donut-segment segment-malware" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#ff0055" stroke-width="3.5" stroke-dasharray="20 100" stroke-dashoffset="-40"/>
+                            <!-- Injection segment (40%) -->
+                            <path class="donut-segment segment-injection" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#ffb800" stroke-width="3.5" stroke-dasharray="40 100" stroke-dashoffset="-60"/>
+                        </svg>
+                        <div class="donut-center-text">65%</div>
+                    </div>
+                    <div class="donut-legend">
+                        <div class="legend-item"><span class="legend-color color-sqli"></span> SQLi</div>
+                        <div class="legend-item"><span class="legend-color color-ddos"></span> DDoS</div>
+                        <div class="legend-item"><span class="legend-color color-malware"></span> Malware</div>
+                        <div class="legend-item"><span class="legend-color color-injection"></span> Injection</div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Integration Guidelines / Code Section -->
+            <!-- Widget 5: Blocked IPs Progress -->
+            <div class="panel widget-card" id="blocked-ips-panel">
+                <div class="panel-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    BLOCKED IPS
+                </div>
+                <div class="blocked-ips-bar-container">
+                    <div class="blocked-ips-fill"></div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Integration Guidelines / Code Section -->
+    <main style="max-width: 1440px; margin: 0 auto 3rem auto; padding: 0 2rem;">
         <section class="panel" id="integration">
             <div class="panel-title">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -223,12 +367,18 @@ print(response.json()) # Output: {"safe": false, "reason": "Homoglyph injection 
                 </div>
             </div>
         </section>
+
+        <!-- Bottom Cyber Map Grid Element -->
+        <div class="cyber-world-map-container">
+            <div class="cyber-map-glow"></div>
+            <div class="cyber-grid-effect"></div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 AgentShield Security. Designed to protect the future of autonomous agents.</p>
     </footer>
 
-    <script src="app.js?v=2"></script>
+    <script src="app.js?v=4"></script>
 </body>
 </html>
