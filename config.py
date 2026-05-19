@@ -15,6 +15,7 @@ class ShieldConfig:
         self.enable_structured_input_check = True
         self.enable_ml_classifier = False  # Disabled by default (requires scikit-learn training)
         self.enable_anomaly_detection = True
+        self.ml_threshold = 0.55  # Confidence threshold for ML classifier (0.0 to 1.0)
         
         # Base64 substring length threshold (to avoid false positives on short random strings)
         self.min_base64_length = 8

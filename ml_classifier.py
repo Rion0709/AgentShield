@@ -44,7 +44,7 @@ class MLInjectionDetector:
             security_logger.error(f"ML Classifier training failed: {e}")
             return False
 
-    def predict(self, prompt: str) -> dict:
+    def predict(self, prompt: str, threshold: float = 0.75) -> dict:
         """Predicts probability of a prompt injection attack. Returns: {'is_harmful': bool, 'confidence': float}"""
         if not self.is_supported or not self.is_trained:
             return {"is_harmful": False, "confidence": 0.0}
@@ -53,7 +53,7 @@ class MLInjectionDetector:
             X = self.vectorizer.transform([prompt])
             prob = self.classifier.predict_proba(X)[0][1]
             return {
-                "is_harmful": prob > 0.75,  # 75% confidence threshold for classification
+                "is_harmful": prob > threshold,  # configurable threshold for classification
                 "confidence": float(prob)
             }
         except Exception as e:

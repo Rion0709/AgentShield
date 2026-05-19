@@ -140,7 +140,7 @@ class AgentShieldFirewall:
                 
         # 6. ML Prediction (if enabled and trained)
         if self.config.enable_ml_classifier and self.ml_detector.is_trained:
-            ml_res = self.ml_detector.predict(user_input)
+            ml_res = self.ml_detector.predict(user_input, threshold=self.config.ml_threshold)
             if ml_res["is_harmful"]:
                 security_logger.warning(f"ML Classifier blocked input. Confidence: {ml_res['confidence']:.2f}")
                 threat_score = max(threat_score, ml_res["confidence"])
